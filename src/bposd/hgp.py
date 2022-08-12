@@ -42,6 +42,7 @@ class hgp(css_code):
 
         self.hz1=np.kron(i_n1,self.h2)
         self.hz2=np.kron(self.h1.T,i_m2)
+        # hz1 is vv and hz2 is cc
         self.hz = np.hstack([   self.hz1,  self.hz2 ])
 
         #construct the hgp logicals

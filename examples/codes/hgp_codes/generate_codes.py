@@ -19,3 +19,9 @@ for code in classical_seed_codes:
     np.savetxt(f"examples/codes/hgp_codes/hgp_{qcode.code_params}_hz.txt", qcode.hz)
     np.savetxt(f"examples/codes/hgp_codes/hgp_{qcode.code_params}_lx.txt", qcode.lx)
     np.savetxt(f"examples/codes/hgp_codes/hgp_{qcode.code_params}_lz.txt", qcode.lz)
+
+def gen_qcode_from_classical(classical_code='mkmn_16_4_6.txt'):
+    seed_code = np.loadtxt(f"examples/codes/classical_seed_codes/{code}").astype(int)
+    # print(seed_code)
+    qcode = hgp(seed_code,compute_distance=True)
+    return qcode
